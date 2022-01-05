@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title >products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <div class="wrapper">
+    <ion-row>
+      <ion-col *ngFor="let product of products" size="4">
+        <ion-card class="card ion-padding ion-margin" style="text-align: center;">
+          <img [src]="product.image" style="height: 220px;"/>
+          <div>
+            <h3>{{product.title}}</h3>
+            <p class="price">Price = ${{product.price}}</p>
+            <p>{{product.description}}</p>
+          </div>
+          <div class="cart-btn-div">
+            <button type ="button">Add to Cart</button>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>
