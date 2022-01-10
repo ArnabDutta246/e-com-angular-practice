@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'products',
     loadChildren: () => import('./pages/client/products/products.module').then( m => m.ProductsPageModule),
     resolve: { products: ProductFetchService }
+  },
+  {
+    path: 'directive-test',
+    loadChildren: () => import('./pages/directive-test/directive-test.module').then( m => m.DirectiveTestPageModule)
   }
 ];
 

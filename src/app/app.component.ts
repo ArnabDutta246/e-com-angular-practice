@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     { title: 'Page-One', url: '/page-one', icon: 'mail' },
     { title: 'Page-One-Edit', url: '/page-one-edit', icon: 'paper-plane' },
      { title: 'Products', url: '/products', icon: 'heart' },
-    // { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
+     { title: 'Directive', url: '/directive-test', icon: 'archive' },
     // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];

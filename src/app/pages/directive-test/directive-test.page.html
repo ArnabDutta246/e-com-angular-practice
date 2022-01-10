@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>directive-test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div appBasic>
+  <ion-text color="white">
+    <p>Background color changes directive</p>
+  </ion-text>
+</div>
+
+<div appBasic [colorChoice]="color">
+  <ion-text color="white">
+    <p>Background color should green</p>
+  </ion-text>
+</div>
+</ion-content>
