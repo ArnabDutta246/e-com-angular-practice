@@ -16,4 +16,18 @@
     <p>Background color should green</p>
   </ion-text>
 </div>
+
+<div *appStructural="condition; then otherDiv" >
+  <p class="unless a">
+    (A) This paragraph is displayed because the condition is false.
+  </p>
+</div>
+<ng-template #otherDiv >
+  <p  class="unless b">
+    (B) Although the condition is true,
+    this paragraph is displayed because appUnless is set to false.
+  </p>
+</ng-template>
+
+  
 </ion-content>

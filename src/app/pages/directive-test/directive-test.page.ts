@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveTestPage implements OnInit {
   color ='green';
+  condition = false;
   constructor() { }
 
   ngOnInit() {

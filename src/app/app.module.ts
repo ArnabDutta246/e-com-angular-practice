@@ -14,7 +14,6 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { LoaderModule } from './components/loader/loader.module';
 import { RouteReuseStrategy } from '@angular/router';
-import { BasicDirective } from './directives/basic/basic.directive';
 
 @NgModule({
   declarations: [AppComponent,],
