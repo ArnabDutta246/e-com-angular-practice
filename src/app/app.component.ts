@@ -14,9 +14,11 @@ export class AppComponent implements OnInit {
   public appPages = [
     { title: 'Page-One', url: '/page-one', icon: 'mail' },
     { title: 'Page-One-Edit', url: '/page-one-edit', icon: 'paper-plane' },
-     { title: 'Products', url: '/products', icon: 'heart' },
-     { title: 'Directive', url: '/directive-test', icon: 'archive' },
-     { title: 'Push-notification', url: '/push-notification', icon: 'trash' },
+    { title: 'Products', url: '/products', icon: 'heart' },
+    { title: 'Directive', url: '/directive-test', icon: 'archive' },
+    { title: 'Push-notification', url: '/push-notification', icon: 'trash' },
+    { title: 'Dynamic-component', url: '/dynamic-component', icon: 'archive' },
+    // { title: 'Push-notification', url: '/push-notification', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
