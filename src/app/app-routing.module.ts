@@ -7,13 +7,13 @@ import { ProductFetchService } from './services/resolver/productFetch/product-fe
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'push-notification',
     pathMatch: 'full'
   },
-  {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
+  // {
+  //   path: 'folder/:id',
+  //   loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  // },
   {
     path: 'page-one-edit',
     loadChildren: () => import('./pages/admin/page-one-edit/page-one-edit.module').then( m => m.PageOneEditPageModule),
@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path: 'directive-test',
     loadChildren: () => import('./pages/directive-test/directive-test.module').then( m => m.DirectiveTestPageModule)
+  },
+  {
+    path: 'push-notification',
+    loadChildren: () => import('./pages/push-notification/push-notification.module').then( m => m.PushNotificationPageModule)
   }
 ];
 

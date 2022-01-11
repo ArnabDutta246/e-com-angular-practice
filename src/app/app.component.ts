@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     { title: 'Page-One-Edit', url: '/page-one-edit', icon: 'paper-plane' },
      { title: 'Products', url: '/products', icon: 'heart' },
      { title: 'Directive', url: '/directive-test', icon: 'archive' },
-    // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
+     { title: 'Push-notification', url: '/push-notification', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
