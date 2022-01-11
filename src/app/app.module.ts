@@ -14,6 +14,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { LoaderModule } from './components/loader/loader.module';
 import { RouteReuseStrategy } from '@angular/router';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [AppComponent,],
@@ -21,7 +22,7 @@ import { RouteReuseStrategy } from '@angular/router';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
-    HttpClientModule,LoaderModule],                                                   
+    HttpClientModule,LoaderModule, ScullyLibModule],                                                   
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
