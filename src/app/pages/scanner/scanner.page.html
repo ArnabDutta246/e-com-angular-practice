@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [style.--background]="scanActive?'#00000000':'#fff'">
   <ion-button (click)="startScanner()" expand="full" [hidden]="scanActive">
   <ion-icon name="scan" slot="start"></ion-icon>  Start Scanner
   </ion-button>

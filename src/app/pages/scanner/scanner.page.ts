@@ -29,6 +29,8 @@ export class ScannerPage implements OnInit,OnDestroy {
         console.log(result);
         // if the result has content
         if (result.hasContent) {
+          this.result = result.content;
+          this.scanActive = false;
           console.log(result.content); // log the raw scanned content
         }
       })
@@ -36,6 +38,7 @@ export class ScannerPage implements OnInit,OnDestroy {
   }
 
   stopScanner(){
+    this.scanActive = false;
     this.scnnerServ.stopScan();
   }
 }
