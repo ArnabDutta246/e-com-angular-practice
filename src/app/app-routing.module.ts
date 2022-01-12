@@ -39,6 +39,10 @@ const routes: Routes = [
   {
     path: 'dynamic-component',
     loadChildren: () => import('./pages/dynamic-component/dynamic-component.module').then( m => m.DynamicComponentPageModule)
+  },
+  {
+    path: 'excel-file',
+    loadChildren: () => import('./pages/excel-file/excel-file.module').then( m => m.ExcelFilePageModule)
   }
 ];
 

@@ -18,7 +18,8 @@ export class AppComponent implements OnInit {
     { title: 'Directive', url: '/directive-test', icon: 'archive' },
     { title: 'Push-notification', url: '/push-notification', icon: 'trash' },
     { title: 'Dynamic-component', url: '/dynamic-component', icon: 'archive' },
-    // { title: 'Push-notification', url: '/push-notification', icon: 'trash' },
+    { title: 'Excel-file', url: '/excel-file', icon: 'archive' },
+    // { title: 'excel-file', url: '/push-notification', icon: 'archive' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
