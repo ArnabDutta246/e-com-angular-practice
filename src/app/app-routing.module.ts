@@ -43,6 +43,14 @@ const routes: Routes = [
   {
     path: 'excel-file',
     loadChildren: () => import('./pages/excel-file/excel-file.module').then( m => m.ExcelFilePageModule)
+  },
+  {
+    path: 'componets-test',
+    loadChildren: () => import('./pages/componets-test/componets-test.module').then( m => m.ComponetsTestPageModule)
+  },
+  {
+    path: 'scanner',
+    loadChildren: () => import('./pages/scanner/scanner.module').then( m => m.ScannerPageModule)
   }
 ];
 

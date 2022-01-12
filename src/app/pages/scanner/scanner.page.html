@@ -1,0 +1,27 @@
+<ion-header [hidden]="scanActive">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>scanner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="startScanner()" expand="full" [hidden]="scanActive">
+  <ion-icon name="scan" slot="start"></ion-icon>  Start Scanner
+  </ion-button>
+
+  <ion-text>
+    <p class="ion-text-center" *ngIf="result && !scanActive"> {{result}} </p>
+  </ion-text>
+
+
+  <ion-row class="scanner-button" [hidden]='!scanActive'>
+    <ion-col class="ion-no-padding">
+      <ion-button expand="full" (click)="stopScanner()">Stop Scan</ion-button>
+    </ion-col>
+  </ion-row>
+  <div class="scan_box" [hidden]="!scanActive">
+  </div>
+</ion-content>

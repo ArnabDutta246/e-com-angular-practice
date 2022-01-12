@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>componets-test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- Default Segment -->
+<ion-segment (ionChange)="segmentChanged($event)" scrollable="true" mode="md">
+  <ion-segment-button value="accordian">
+    <ion-label>Accordian</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="calender">
+    <ion-label>Calender</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+<!-- dynamic component loading -->
+</ion-content>
