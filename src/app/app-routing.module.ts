@@ -7,7 +7,7 @@ import { ProductFetchService } from './services/resolver/productFetch/product-fe
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'push-notification',
+    redirectTo: 'page-one',
     pathMatch: 'full'
   },
   // {
