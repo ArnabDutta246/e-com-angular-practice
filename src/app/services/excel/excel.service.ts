@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Capacitor } from "@capacitor/core";
 import { Share } from '@capacitor/share';
-import { Filesystem, Directory, Encoding, FilesystemDirectory } from '@capacitor/filesystem';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 //import * as papa from 'papaparse';
+import { Platform } from '@ionic/angular';
 
 import * as XLSX from 'xlsx';
 @Injectable({
@@ -10,7 +11,7 @@ import * as XLSX from 'xlsx';
 })
 export class ExcelService {
   directories:any;
-  constructor() { }
+  constructor(private platform:Platform) { }
 
   /**
    * Export excel from json data
@@ -108,10 +109,10 @@ export class ExcelService {
         let xlsxData = this.createXlsx(fileData);
         data = this.s2ab(xlsxData);
       }
-      if ( Capacitor.platform === 'web' ) {
+      if ( !this.platform.is('mobile') ) {
         console.log("function called");
         this.downloadFileWeb(data, name);
-      } else if ( Capacitor.platform !== 'web' ){
+      } else if ( this.platform.is('mobile') ){
         let type = this.getType(name);
         let blob: any = new Blob([data], { type: type });
         // get base64 string
