@@ -3,6 +3,7 @@ import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { PageData } from 'src/app/interface/interface';
 import { DbService } from 'src/app/services/db/db.service';
+import { FireAnalyticsService } from 'src/app/services/fire-analytics/fire-analytics.service';
 
 @Component({
   selector: 'app-page-one',
@@ -16,7 +17,7 @@ export class PageOnePage implements OnInit {
   codeOne = '';
   codeTwo = '';
   date = new Date();
-  constructor(private db:DbService,private activatedRoute: ActivatedRoute,private sanitizer: DomSanitizer) { }
+  constructor(private db:DbService,private activatedRoute: ActivatedRoute,private sanitizer: DomSanitizer,private fireAna:FireAnalyticsService) { }
 
   ngOnInit() {
     if (!window.DOMParser) return false;
@@ -29,5 +30,23 @@ export class PageOnePage implements OnInit {
       this.code = res[0].template;
       this.data = this.sanitizer.bypassSecurityTrustHtml(res[0].template);
     })
+    //========= [ calling fireAna ] =================
+    this.setUser();
+    this.setProperty();
+    this.logEvent();
   }
+
+
+    //========= [ firebase analytics ] ==============
+    setUser() {
+      this.fireAna.setUser();
+     }
+    
+     setProperty() {
+       this.fireAna.setProperty();
+     }
+    
+     logEvent() {
+       this.fireAna.logEvent('Client Page','client page visit');
+     }
 }

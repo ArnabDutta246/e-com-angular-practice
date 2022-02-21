@@ -4,6 +4,10 @@
 		"classpath": "com.dutchconcepts.capacitor.barcodescanner.BarcodeScanner"
 	},
 	{
+		"pkg": "@capacitor-community/firebase-analytics",
+		"classpath": "com.getcapacitor.community.firebaseanalytics.FirebaseAnalytics"
+	},
+	{
 		"pkg": "@capacitor/app",
 		"classpath": "com.capacitorjs.plugins.app.AppPlugin"
 	},
