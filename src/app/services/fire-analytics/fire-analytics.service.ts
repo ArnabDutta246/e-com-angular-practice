@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
 import { Router, RouterEvent, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { Plugins } from "@capacitor/core";
-const { FirebaseAnalytics, Device } = Plugins;
+// import { Plugins } from "@capacitor/core";
+// const { FirebaseAnalytics, Device } = Plugins;
  
 // Init for the web
 import "@capacitor-community/firebase-analytics";
+import { FirebaseAnalytics } from '@capacitor-community/firebase-analytics';
+import { environment } from 'src/environments/environment.prod';
+
+// default
+// import { getAnalytics } from "firebase/analytics";
+// const analytics = getAnalytics();
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,35 +28,41 @@ export class FireAnalyticsService {
       console.log('route changed: ', e.url);
       this.setScreenName(e.url)
     });
+    this.setUser()
   }
  
   async initFb() {
-    if ((await Device.getInfo()).platform == 'web') {
-      FirebaseAnalytics.initializeFirebase(environment.firebaseConfig);
-    }
+    // getAnalytics()
+    console.log("firebase initializeFirebase");
+    //if ((await Device.getInfo()).platform == 'web') {
+    //  FirebaseAnalytics.initializeFirebase(environment.firebaseConfig);
+    //}
   }
  
   setUser() {
     // Use Firebase Auth uid
     FirebaseAnalytics.setUserId({
-      userId: "test_123",
-    });
+      userId: "Arnab1234",
+    }).then(res=>console.log("setuser "))
+    .catch(err=>console.log("setuser ",err));
   }
  
   setProperty() {
     FirebaseAnalytics.setUserProperty({
       name: "framework",
       value: "angular",
-    });
+    }).then(res=>console.log("setProperty "))
+    .catch(err=>console.log("setProperty ",err));
   }
  
-  logEvent(name:string,method:string) {
+  logEvent(name?:string,method?:string) {
     FirebaseAnalytics.logEvent({
-      name: "login",
+      name: name?name:"login",
       params: {
-        method: "email"
+        method: method?method:"email"
       }
-    });
+    }).then(res=>console.log("logEvent "))
+    .catch(err=>console.log("logEvent ",err));;
   }
  
   setScreenName(screenName) {

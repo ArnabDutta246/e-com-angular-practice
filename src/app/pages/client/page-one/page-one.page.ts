@@ -47,6 +47,6 @@ export class PageOnePage implements OnInit {
      }
     
      logEvent() {
-       this.fireAna.logEvent('Client Page','client page visit');
+       this.fireAna.logEvent('client_page','client page visit');
      }
 }

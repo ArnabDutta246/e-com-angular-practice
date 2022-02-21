@@ -35,6 +35,7 @@ export class PageOneEditPage implements OnInit {
       this.data = this.sanitizer.bypassSecurityTrustHtml(res[0].template);
     })
     //========= [ calling fireAna ] =================
+    this.fireAna.initFb();
     this.setUser();
     this.setProperty();
     this.logEvent();
@@ -59,6 +60,6 @@ export class PageOneEditPage implements OnInit {
    }
   
    logEvent() {
-     this.fireAna.logEvent('home Page','home page visit');
+     this.fireAna.logEvent('home_Page','home page visit');
    }
 }

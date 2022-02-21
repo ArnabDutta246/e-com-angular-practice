@@ -40,6 +40,6 @@ export class ProductsPage implements OnInit {
      }
     
      logEvent() {
-       this.fireAna.logEvent('Product page','product page visit');
+       this.fireAna.logEvent('product_page','product page visit');
      }
 }
